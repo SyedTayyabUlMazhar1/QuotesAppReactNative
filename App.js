@@ -27,7 +27,7 @@ const colors = {
   background: '#DF9A9A',
   icon: {
     active: '#3f91db',
-    inactive: '#7d7d7d',
+    inactive: '#9D9D9D',
   },
 };
 const styles = StyleSheet.create({
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   iconsRow: {
-    marginTop: 8,
+    marginTop: 14,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -102,6 +102,8 @@ const styles = StyleSheet.create({
   },
   vote: {
     color: colors.icon.inactive,
+    fontFamily:"Arial",
+    fontSize:12,
   },
 });
 
@@ -211,9 +213,12 @@ class IconsComponent extends Component {
   render() {
     return (
       <View style={styles.iconsRow}>
-        <Image source={Icons.upvote} style={styles.icon} />
-        <Text style={styles.vote}>1.1K</Text>
-        <Image source={Icons.downvote} style={styles.icon} />
+        <Image source={Icons.upvote1} style={styles.icon} />
+        <Text style={[styles.vote, {marginRight:12}]}>1.1K</Text>
+        <Image source={Icons.downvote1} style={styles.icon} />
+        <Text style={[styles.vote, {marginRight:12}]}>2.1K</Text>
+        <Image source={Icons.favorite1} style={[styles.icon, {marginRight:12}]} />
+        <Image source={Icons.share1} style={styles.icon} />
       </View>
     );
   }
