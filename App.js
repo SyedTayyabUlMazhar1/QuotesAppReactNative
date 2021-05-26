@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 
 import {
   StyleSheet,
@@ -7,6 +7,8 @@ import {
   Image,
   FlatList,
   SafeAreaView,
+  TouchableOpacity,
+  Share,
 } from 'react-native';
 
 import Icons from './src/assets/icon/index';
@@ -19,9 +21,6 @@ const loremShort =
 const profilePic =
   'https://i.pinimg.com/474x/7d/1a/3f/7d1a3f77eee9f34782c6f88e97a6c888.jpg';
 const name = 'John Doe';
-// const quotation =
-//   'The greatest glory in living lies not in never falling, but in rising every time we fall.';
-// const author = 'Nelson Mandela';
 
 const colors = {
   background: '#DF9A9A',
@@ -102,93 +101,136 @@ const styles = StyleSheet.create({
   },
   vote: {
     color: colors.icon.inactive,
-    fontFamily:"Arial",
-    fontSize:12,
+    fontFamily: 'Arial',
+    fontSize: 12,
+    width: 24,
+    textAlign: 'center',
   },
 });
 
-const iconsDir = './src/assets/icon/';
+export default App = () => {
+  const [dataState, setDataState] = useState([
+    {
+      profilePic: profilePic,
+      name: name,
+      quotation:
+        'The greatest glory in living lies not in never falling, but in rising every time we fall.',
+      author: 'Nelson Mandela',
+      favorited: true,
+      upvoted: true,
+      downvoted: false,
+      votes: 23,
+    },
+    {
+      profilePic: profilePic,
+      name: name,
+      quotation: 'The way to get started is to quit talking and begin doing.',
+      author: 'Walt Disney',
+      favorited: false,
+      upvoted: true,
+      downvoted: false,
+      votes: -10,
+    },
+    {
+      profilePic: profilePic,
+      name: name,
+      quotation:
+        "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.",
+      author: 'Steve Jobs',
+      favorited: false,
+      upvoted: false,
+      downvoted: false,
+      votes: 3,
+    },
+    {
+      profilePic: profilePic,
+      name: name,
+      quotation:
+        'If life were predictable it would cease to be life, and be without flavor.',
+      author: 'Eleanor Roosevelt',
+      favorited: false,
+      upvoted: false,
+      downvoted: true,
+      votes: 8,
+    },
+    {
+      profilePic: profilePic,
+      name: name,
+      quotation:
+        "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
+      author: 'Oprah Winfrey',
+      favorited: false,
+      upvoted: false,
+      downvoted: false,
+      votes: 0,
+    },
+    {
+      profilePic: profilePic,
+      name: name,
+      quotation:
+        "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.",
+      author: 'James Cameron',
+      favorited: true,
+      upvoted: true,
+      downvoted: false,
+      votes: 80,
+    },
+    {
+      profilePic: profilePic,
+      name: name,
+      quotation: "Life is what happens when you're busy making other plans",
+      author: 'John Lennon',
+      favorited: true,
+      upvoted: false,
+      downvoted: true,
+      votes: 99,
+    },
+  ]);
 
-const data = [
-  {
-    profilePic: profilePic,
-    name: name,
-    quotation:
-      'The greatest glory in living lies not in never falling, but in rising every time we fall.',
-    author: 'Nelson Mandela',
-  },
-  {
-    profilePic: profilePic,
-    name: name,
-    quotation: 'The way to get started is to quit talking and begin doing.',
-    author: 'Walt Disney',
-  },
-  {
-    profilePic: profilePic,
-    name: name,
-    quotation:
-      "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.",
-    author: 'Steve Jobs',
-  },
-  {
-    profilePic: profilePic,
-    name: name,
-    quotation:
-      'If life were predictable it would cease to be life, and be without flavor.',
-    author: 'Eleanor Roosevelt',
-  },
-  {
-    profilePic: profilePic,
-    name: name,
-    quotation:
-      "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
-    author: 'Oprah Winfrey',
-  },
-  {
-    profilePic: profilePic,
-    name: name,
-    quotation:
-      "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.",
-    author: 'James Cameron',
-  },
-  {
-    profilePic: profilePic,
-    name: name,
-    quotation: "Life is what happens when you're busy making other plans",
-    author: 'John Lennon',
-  },
-];
-
-export default class App extends Component {
-  render() {
-    return (
-      <SafeAreaView style={{flex: 1, backgroundColor: colors.background}}>
-        <View style={{flex: 1}}>
-          <FlatList
-            data={data}
-            renderItem={({item}) => <CardComponent itemData={item} />}
-            keyExtractor={(_, index) => index}
+  return (
+    <SafeAreaView style={{flex: 1, backgroundColor: colors.background}}>
+      <FlatList
+        data={dataState}
+        renderItem={({item}) => (
+          <CardComponent
+            itemData={item}
+            setState={() => {
+              setDataState(Array.from(dataState));
+            }}
           />
-        </View>
-      </SafeAreaView>
-    );
-  }
-}
+        )}
+        keyExtractor={(_, index) => index}
+      />
+    </SafeAreaView>
+  );
+};
 
 class CardComponent extends Component {
   render() {
-    const {profilePic, name, quotation, author} = this.props.itemData;
+    const {
+      profilePic,
+      name,
+      quotation,
+      author,
+      upvoted,
+      votes,
+      downvoted,
+      favorited,
+    } = this.props.itemData;
 
     return (
       <View style={styles.container}>
-        <View style={[styles.card, {}]}>
+        <View style={styles.card}>
           <HeaderComponent profilePic={profilePic} name={name} />
 
           <Text style={styles.quotation}>{quotation}</Text>
 
           <Text style={styles.author}>-{author}</Text>
 
-          <IconsComponent />
+          <IconsRowComponent
+            itemData={this.props.itemData}
+            setState={this.props.setState}
+          />
         </View>
       </View>
     );
@@ -209,17 +251,94 @@ class HeaderComponent extends Component {
   }
 }
 
-class IconsComponent extends Component {
+const IconsRowComponent = props => {
+  const {upvoted, downvoted, votes, favorited} = props.itemData;
+
+  toggleUpvote = () => {
+    if (!upvoted && !downvoted) {
+      props.itemData.upvoted = true;
+      props.itemData.votes = votes + 1;
+    } else if (upvoted) {
+      props.itemData.upvoted = false;
+      props.itemData.votes = votes - 1;
+    } else if (downvoted) {
+      props.itemData.upvoted = true;
+      props.itemData.downvoted = false;
+      props.itemData.votes = votes + 2;
+    }
+
+    props.setState();
+  };
+
+  toggleDownvote = () => {
+    if (!upvoted && !downvoted) {
+      props.itemData.downvoted = true;
+      props.itemData.votes = votes - 1;
+    } else if (downvoted) {
+      props.itemData.downvoted = false;
+      props.itemData.votes = votes + 1;
+    } else if (upvoted) {
+      props.itemData.upvoted = false;
+      props.itemData.downvoted = true;
+      props.itemData.votes = votes - 2;
+    }
+
+    props.setState();
+  };
+
+  toggleFavorite = () => {
+    console.log('TOOGLE FAV');
+    props.itemData.favorited = !props.itemData.favorited;
+    props.setState();
+  };
+
+  share = () => {
+    try {
+      const result = Share.share({
+        message: props.itemData.quotation + ' -' + props.itemData.author,
+        title: 'Share Quote',
+      });
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  return (
+    <View style={styles.iconsRow}>
+      <Icon
+        onPress={toggleUpvote}
+        style={upvoted && styles.iconActive}
+        source={Icons.upvote}
+      />
+
+      <Text style={styles.vote}>{votes}</Text>
+
+      <Icon
+        onPress={toggleDownvote}
+        style={downvoted && styles.iconActive}
+        source={Icons.downvote}
+      />
+
+      <Icon
+        onPress={toggleFavorite}
+        style={[favorited && styles.iconActive, {marginHorizontal: 16}]}
+        source={Icons.favorite}
+      />
+
+      <Icon source={Icons.share} onPress={share} />
+    </View>
+  );
+};
+
+class Icon extends Component {
   render() {
     return (
-      <View style={styles.iconsRow}>
-        <Image source={Icons.upvote1} style={styles.icon} />
-        <Text style={[styles.vote, {marginRight:12}]}>1.1K</Text>
-        <Image source={Icons.downvote1} style={styles.icon} />
-        <Text style={[styles.vote, {marginRight:12}]}>2.1K</Text>
-        <Image source={Icons.favorite1} style={[styles.icon, {marginRight:12}]} />
-        <Image source={Icons.share1} style={styles.icon} />
-      </View>
+      <TouchableOpacity onPress={this.props.onPress}>
+        <Image
+          source={this.props.source}
+          style={[styles.icon, this.props.style]}
+        />
+      </TouchableOpacity>
     );
   }
 }
