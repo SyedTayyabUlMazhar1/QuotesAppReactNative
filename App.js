@@ -24,10 +24,6 @@ const name = 'John Doe';
 
 const colors = {
   background: '#DF9A9A',
-  icon: {
-    active: '#3f91db',
-    inactive: '#9D9D9D',
-  },
 };
 
 export default App = () => {

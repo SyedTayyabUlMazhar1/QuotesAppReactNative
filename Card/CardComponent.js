@@ -1,18 +1,9 @@
 import React, {Component, useState} from 'react';
 
-import HeaderComponent from './HeaderComponent'
-import IconsRowComponent from './IconsRowComponent'
+import HeaderComponent from './HeaderComponent';
+import IconsRowComponent from './IconsRowComponent';
 
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  FlatList,
-  SafeAreaView,
-  TouchableOpacity,
-  Share,
-} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 const colors = {
   background: '#DF9A9A',
   icon: {
@@ -21,7 +12,6 @@ const colors = {
   },
 };
 const styles = StyleSheet.create({
-
   quotation: {
     // backgroundColor:"#CECECE",
     paddingHorizontal: 16,
@@ -58,22 +48,14 @@ const styles = StyleSheet.create({
     color: '#7D7D7D',
     marginTop: 8,
   },
-  
 });
-
 
 class CardComponent extends Component {
   render() {
-    const {
-      profilePic,
-      name,
-      quotation,
-      author,
-      upvoted,
-      votes,
-      downvoted,
-      favorited,
-    } = this.props.itemData;
+    const {itemIndex, itemData, onPressFav, onPressUpvote, onPressDownvote} =
+      this.props;
+
+    const {profilePic, name, quotation, author} = itemData;
 
     return (
       <View style={styles.container}>
@@ -85,12 +67,11 @@ class CardComponent extends Component {
           <Text style={styles.author}>-{author}</Text>
 
           <IconsRowComponent
-            itemData={this.props.itemData}
-            itemIndex={this.props.itemIndex}
-
-            onPressFav = {this.props.onPressFav}
-            onPressUpvote = {this.props.onPressUpvote}
-            onPressDownvote = {this.props.onPressDownvote}
+            itemData={itemData}
+            itemIndex={itemIndex}
+            onPressFav={onPressFav}
+            onPressUpvote={onPressUpvote}
+            onPressDownvote={onPressDownvote}
           />
         </View>
       </View>
