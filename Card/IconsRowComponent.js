@@ -21,14 +21,13 @@ const colors = {
   },
 };
 const styles = StyleSheet.create({
-  
   iconsRow: {
     marginTop: 14,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
   },
- 
+
   iconActive: {
     tintColor: colors.icon.active,
   },
@@ -43,46 +42,10 @@ const styles = StyleSheet.create({
 
 const IconsRowComponent = props => {
   const {upvoted, downvoted, votes, favorited} = props.itemData;
+  const {itemIndex} = props;
+  const {onPressFav, onPressUpvote, onPressDownvote} = props;
 
-  toggleUpvote = () => {
-    if (!upvoted && !downvoted) {
-      props.itemData.upvoted = true;
-      props.itemData.votes = votes + 1;
-    } else if (upvoted) {
-      props.itemData.upvoted = false;
-      props.itemData.votes = votes - 1;
-    } else if (downvoted) {
-      props.itemData.upvoted = true;
-      props.itemData.downvoted = false;
-      props.itemData.votes = votes + 2;
-    }
-
-    props.setState();
-  };
-
-  toggleDownvote = () => {
-    if (!upvoted && !downvoted) {
-      props.itemData.downvoted = true;
-      props.itemData.votes = votes - 1;
-    } else if (downvoted) {
-      props.itemData.downvoted = false;
-      props.itemData.votes = votes + 1;
-    } else if (upvoted) {
-      props.itemData.upvoted = false;
-      props.itemData.downvoted = true;
-      props.itemData.votes = votes - 2;
-    }
-
-    props.setState();
-  };
-
-  toggleFavorite = () => {
-    console.log('TOOGLE FAV');
-    props.itemData.favorited = !props.itemData.favorited;
-    props.setState();
-  };
-
-  share = () => {
+  const share = () => {
     try {
       const result = Share.share({
         message: props.itemData.quotation + ' -' + props.itemData.author,
@@ -96,7 +59,7 @@ const IconsRowComponent = props => {
   return (
     <View style={styles.iconsRow}>
       <IconComponent
-        onPress={toggleUpvote}
+        onPress={() => onPressUpvote(itemIndex)}
         style={upvoted && styles.iconActive}
         source={Icons.upvote}
       />
@@ -104,13 +67,13 @@ const IconsRowComponent = props => {
       <Text style={styles.vote}>{votes}</Text>
 
       <IconComponent
-        onPress={toggleDownvote}
+        onPress={() => onPressDownvote(itemIndex)}
         style={downvoted && styles.iconActive}
         source={Icons.downvote}
       />
 
       <IconComponent
-        onPress={toggleFavorite}
+        onPress={() => onPressFav(itemIndex)}
         style={[favorited && styles.iconActive, {marginHorizontal: 16}]}
         source={Icons.favorite}
       />

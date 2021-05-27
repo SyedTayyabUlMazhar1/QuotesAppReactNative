@@ -1,5 +1,5 @@
 import React, {Component, useState} from 'react';
-import CardComponent from './Card/CardComponent'
+import CardComponent from './Card/CardComponent';
 import {
   StyleSheet,
   Text,
@@ -109,16 +109,74 @@ export default App = () => {
     },
   ]);
 
+  const toggleUpvote = index => {
+    const oldItem = dataState[index];
+    const modified = {...oldItem};
+
+    if (!oldItem.upvoted && !oldItem.downvoted) {
+      modified.upvoted = true;
+      modified.votes = oldItem.votes + 1;
+    } else if (oldItem.upvoted) {
+      modified.upvoted = false;
+      modified.votes = oldItem.votes - 1;
+    } else if (oldItem.downvoted) {
+      modified.upvoted = true;
+      modified.downvoted = false;
+      modified.votes = oldItem.votes + 2;
+    }
+
+    const newState = Array.from(dataState);
+    newState[index] = modified;
+    setDataState(newState)
+  };
+
+  const toggleDownvote = index => {
+    const oldItem = dataState[index];
+    const modified = {...oldItem};
+
+    if (!oldItem.upvoted && !oldItem.downvoted) {
+      modified.downvoted = true;
+      modified.votes = oldItem.votes - 1;
+    } else if (oldItem.downvoted) {
+      modified.downvoted = false;
+      modified.votes = oldItem.votes + 1;
+    } else if (oldItem.upvoted) {
+      modified.upvoted = false;
+      modified.downvoted = true;
+      modified.votes = oldItem.votes - 2;
+    }
+
+    const newState = Array.from(dataState);
+    newState[index] = modified;
+    setDataState(newState)
+  };
+
+
+  const toggleFavorite = index => {
+    const toModify = dataState[index];
+    const modified = {...toModify, favorited: !toModify.favorited};
+
+    const newState = Array.from(dataState);
+    newState[index] = modified;
+
+    setDataState(newState)
+  };
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.background}}>
       <FlatList
         data={dataState}
-        renderItem={({item}) => (
+        renderItem={({item, index}) => (
           <CardComponent
+            // setState={() => {
+            //   setDataState(Array.from(dataState));
+            // }}
             itemData={item}
-            setState={() => {
-              setDataState(Array.from(dataState));
-            }}
+            itemIndex={index}
+
+            onPressFav = {toggleFavorite}
+            onPressUpvote= {toggleUpvote}
+            onPressDownvote= {toggleDownvote}
           />
         )}
         keyExtractor={(_, index) => index}

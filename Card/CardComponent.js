@@ -86,7 +86,11 @@ class CardComponent extends Component {
 
           <IconsRowComponent
             itemData={this.props.itemData}
-            setState={this.props.setState}
+            itemIndex={this.props.itemIndex}
+
+            onPressFav = {this.props.onPressFav}
+            onPressUpvote = {this.props.onPressUpvote}
+            onPressDownvote = {this.props.onPressDownvote}
           />
         </View>
       </View>
