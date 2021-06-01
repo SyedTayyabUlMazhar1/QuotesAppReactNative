@@ -1,19 +1,11 @@
-import React, {Component, useState} from 'react';
-
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import HeaderComponent from './HeaderComponent';
 import IconsRowComponent from './IconsRowComponent';
 
-import {StyleSheet, Text, View} from 'react-native';
-const colors = {
-  background: '#DF9A9A',
-  icon: {
-    active: '#3f91db',
-    inactive: '#9D9D9D',
-  },
-};
+
 const styles = StyleSheet.create({
   quotation: {
-    // backgroundColor:"#CECECE",
     paddingHorizontal: 16,
     marginTop: 8,
     color: '#333',
@@ -52,8 +44,7 @@ const styles = StyleSheet.create({
 
 class CardComponent extends Component {
   render() {
-    const {itemIndex, itemData, onPressFav, onPressUpvote, onPressDownvote} =
-      this.props;
+    const {itemIndex, itemData} = this.props;
 
     const {profilePic, name, quotation, author} = itemData;
 
@@ -66,13 +57,7 @@ class CardComponent extends Component {
 
           <Text style={styles.author}>-{author}</Text>
 
-          <IconsRowComponent
-            itemData={itemData}
-            itemIndex={itemIndex}
-            onPressFav={onPressFav}
-            onPressUpvote={onPressUpvote}
-            onPressDownvote={onPressDownvote}
-          />
+          <IconsRowComponent itemData={itemData} itemIndex={itemIndex} />
         </View>
       </View>
     );

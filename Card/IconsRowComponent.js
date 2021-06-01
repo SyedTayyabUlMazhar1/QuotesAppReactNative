@@ -1,17 +1,9 @@
-import React, {Component, useState} from 'react';
-import IconComponent from './IconComponent';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  FlatList,
-  SafeAreaView,
-  TouchableOpacity,
-  Share,
-} from 'react-native';
-
+import React, { useContext } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { CallbackContext } from '../App';
 import Icons from '../src/assets/icon/index';
+import IconComponent from './IconComponent';
+
 
 const colors = {
   background: '#DF9A9A',
@@ -43,26 +35,20 @@ const styles = StyleSheet.create({
 const IconsRowComponent = props => {
   const {upvoted, downvoted, votes, favorited} = props.itemData;
   const {itemIndex} = props;
-  const {onPressFav, onPressUpvote, onPressDownvote} = props;
+  const {toggleUpvote, toggleDownvote, toggleFavorite} =
+    useContext(CallbackContext);
 
   const share = () => {
     try {
-      const result = Share.share({
-        message: props.itemData.quotation + ' -' + props.itemData.author,
-        title: 'Share Quote',
-      });
     } catch (error) {
       alert(error.message);
     }
   };
 
-
-  
-
   return (
     <View style={styles.iconsRow}>
       <IconComponent
-        onPress={() => onPressUpvote(itemIndex)}
+        onPress={() => toggleUpvote(itemIndex)}
         style={upvoted && styles.iconActive}
         source={Icons.upvote}
       />
@@ -70,13 +56,13 @@ const IconsRowComponent = props => {
       <Text style={styles.vote}>{votes}</Text>
 
       <IconComponent
-        onPress={() => onPressDownvote(itemIndex)}
+        onPress={() => toggleDownvote(itemIndex)}
         style={downvoted && styles.iconActive}
         source={Icons.downvote}
       />
 
       <IconComponent
-        onPress={() => onPressFav(itemIndex)}
+        onPress={() => toggleFavorite(itemIndex)}
         style={[favorited && styles.iconActive, {marginHorizontal: 16}]}
         source={Icons.favorite}
       />

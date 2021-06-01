@@ -1,22 +1,6 @@
-import React, {Component, useState} from 'react';
+import React, {useState} from 'react';
+import {FlatList, SafeAreaView} from 'react-native';
 import CardComponent from './Card/CardComponent';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  FlatList,
-  SafeAreaView,
-  TouchableOpacity,
-  Share,
-} from 'react-native';
-
-import Icons from './src/assets/icon/index';
-
-const lorem =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-const loremShort =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 
 const profilePic =
   'https://i.pinimg.com/474x/7d/1a/3f/7d1a3f77eee9f34782c6f88e97a6c888.jpg';
@@ -26,6 +10,7 @@ const colors = {
   background: '#DF9A9A',
 };
 
+export const CallbackContext = React.createContext();
 export default App = () => {
   const [dataState, setDataState] = useState([
     {
@@ -123,7 +108,7 @@ export default App = () => {
 
     const newState = Array.from(dataState);
     newState[index] = modified;
-    setDataState(newState)
+    setDataState(newState);
   };
 
   const toggleDownvote = index => {
@@ -144,36 +129,36 @@ export default App = () => {
 
     const newState = Array.from(dataState);
     newState[index] = modified;
-    setDataState(newState)
+    setDataState(newState);
   };
 
-
   const toggleFavorite = index => {
+    console.log('toggleFavorite() index:', index);
     const toModify = dataState[index];
     const modified = {...toModify, favorited: !toModify.favorited};
 
     const newState = Array.from(dataState);
     newState[index] = modified;
 
-    setDataState(newState)
+    setDataState(newState);
+  };
+
+  const render = listItem => {
+    return (
+      <CardComponent itemData={listItem.item} itemIndex={listItem.index} />
+    );
   };
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: colors.background}}>
-      <FlatList
-        data={dataState}
-        renderItem={({item, index}) => (
-          <CardComponent
-            itemData={item}
-            itemIndex={index}
-
-            onPressFav = {toggleFavorite}
-            onPressUpvote= {toggleUpvote}
-            onPressDownvote= {toggleDownvote}
-          />
-        )}
-        keyExtractor={(_, index) => index}
-      />
-    </SafeAreaView>
+    <CallbackContext.Provider
+      value={{toggleUpvote, toggleDownvote, toggleFavorite}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: colors.background}}>
+        <FlatList
+          data={dataState}
+          renderItem={listItem => render(listItem)}
+          keyExtractor={(_, index) => index}
+        />
+      </SafeAreaView>
+    </CallbackContext.Provider>
   );
 };
