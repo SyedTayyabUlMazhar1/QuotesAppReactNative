@@ -11,18 +11,18 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		302AE3D4BCC045B4B3264B89 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 474E5B01511441FAAD7E8B9B /* favorite.png */; };
+		33A5BB1248C24535B3C9F8E9 /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D79A48B909F4749A9DFD959 /* DancingScript-Bold.ttf */; };
+		49CE53629FC74E3B95F50666 /* upvote.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BEF138E67F34BCDA640D0C4 /* upvote.png */; };
+		5045420C8F344066835E82B8 /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EE5B3C736E64FFE871C7B76 /* DancingScript-Regular.ttf */; };
+		739CD0EE083C46C7BED1EAE7 /* DancingScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D5C638D36CE4DAD8F0703F5 /* DancingScript.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		B29213E416FF41A5AA98AC82 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 0618F771EDDB4992B6B990E5 /* share.png */; };
+		C9F7F7ED6F6F43E8ACB0DBEB /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57B807EEEDFB4879B2EA20A7 /* DancingScript-Medium.ttf */; };
 		CB4F2170D7B79038E692A8E6 /* libPods-FirstProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA023BD9CCBFA59D35FB1A0 /* libPods-FirstProject.a */; };
 		D9EB9E26768F9CA8FC1C75F1 /* libPods-FirstProject-FirstProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 665B7305E95C4D6BE5278C30 /* libPods-FirstProject-FirstProjectTests.a */; };
-		33A5BB1248C24535B3C9F8E9 /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D79A48B909F4749A9DFD959 /* DancingScript-Bold.ttf */; };
-		C9F7F7ED6F6F43E8ACB0DBEB /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57B807EEEDFB4879B2EA20A7 /* DancingScript-Medium.ttf */; };
-		5045420C8F344066835E82B8 /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EE5B3C736E64FFE871C7B76 /* DancingScript-Regular.ttf */; };
 		E3AA59E44B1046D0B3F30C41 /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B75151B3B4B647AE9D449333 /* DancingScript-SemiBold.ttf */; };
-		739CD0EE083C46C7BED1EAE7 /* DancingScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D5C638D36CE4DAD8F0703F5 /* DancingScript.ttf */; };
 		EFD80F51546341D9B26F3036 /* downvote.png in Resources */ = {isa = PBXBuildFile; fileRef = AB6B3B71F38F43C3A6AF5F5E /* downvote.png */; };
-		302AE3D4BCC045B4B3264B89 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 474E5B01511441FAAD7E8B9B /* favorite.png */; };
-		B29213E416FF41A5AA98AC82 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 0618F771EDDB4992B6B990E5 /* share.png */; };
-		49CE53629FC74E3B95F50666 /* upvote.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BEF138E67F34BCDA640D0C4 /* upvote.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,7 @@
 		00E356EE1AD99517003FC87E /* FirstProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* FirstProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstProjectTests.m; sourceTree = "<group>"; };
+		0618F771EDDB4992B6B990E5 /* share.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = share.png; path = ../src/assets/icon/share.png; sourceTree = "<group>"; };
 		0E9F884696C40085CAD3EBB4 /* Pods-FirstProject-FirstProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstProject-FirstProjectTests.release.xcconfig"; path = "Target Support Files/Pods-FirstProject-FirstProjectTests/Pods-FirstProject-FirstProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* FirstProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FirstProject/AppDelegate.h; sourceTree = "<group>"; };
@@ -47,21 +48,20 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FirstProject/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FirstProject/main.m; sourceTree = "<group>"; };
 		25B7597392878AE45179BBAA /* Pods-FirstProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstProject.release.xcconfig"; path = "Target Support Files/Pods-FirstProject/Pods-FirstProject.release.xcconfig"; sourceTree = "<group>"; };
+		2BEF138E67F34BCDA640D0C4 /* upvote.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = upvote.png; path = ../src/assets/icon/upvote.png; sourceTree = "<group>"; };
+		3D79A48B909F4749A9DFD959 /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DancingScript-Bold.ttf"; path = "../src/assets/fonts/DancingScript-Bold.ttf"; sourceTree = "<group>"; };
+		474E5B01511441FAAD7E8B9B /* favorite.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = favorite.png; path = ../src/assets/icon/favorite.png; sourceTree = "<group>"; };
+		4EE5B3C736E64FFE871C7B76 /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DancingScript-Regular.ttf"; path = "../src/assets/fonts/DancingScript-Regular.ttf"; sourceTree = "<group>"; };
+		57B807EEEDFB4879B2EA20A7 /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DancingScript-Medium.ttf"; path = "../src/assets/fonts/DancingScript-Medium.ttf"; sourceTree = "<group>"; };
 		665B7305E95C4D6BE5278C30 /* libPods-FirstProject-FirstProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirstProject-FirstProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA023BD9CCBFA59D35FB1A0 /* libPods-FirstProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirstProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		712B5D876BC9F0D044D401F2 /* Pods-FirstProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstProject.debug.xcconfig"; path = "Target Support Files/Pods-FirstProject/Pods-FirstProject.debug.xcconfig"; sourceTree = "<group>"; };
+		7D5C638D36CE4DAD8F0703F5 /* DancingScript.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = DancingScript.ttf; path = ../src/assets/fonts/DancingScript.ttf; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FirstProject/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F7C97E101A6316D80246507 /* Pods-FirstProject-FirstProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstProject-FirstProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-FirstProject-FirstProjectTests/Pods-FirstProject-FirstProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AB6B3B71F38F43C3A6AF5F5E /* downvote.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = downvote.png; path = ../src/assets/icon/downvote.png; sourceTree = "<group>"; };
+		B75151B3B4B647AE9D449333 /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DancingScript-SemiBold.ttf"; path = "../src/assets/fonts/DancingScript-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		3D79A48B909F4749A9DFD959 /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; name = "DancingScript-Bold.ttf"; path = "../src/assets/fonts/DancingScript-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		57B807EEEDFB4879B2EA20A7 /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; name = "DancingScript-Medium.ttf"; path = "../src/assets/fonts/DancingScript-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		4EE5B3C736E64FFE871C7B76 /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; name = "DancingScript-Regular.ttf"; path = "../src/assets/fonts/DancingScript-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B75151B3B4B647AE9D449333 /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; name = "DancingScript-SemiBold.ttf"; path = "../src/assets/fonts/DancingScript-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7D5C638D36CE4DAD8F0703F5 /* DancingScript.ttf */ = {isa = PBXFileReference; name = "DancingScript.ttf"; path = "../src/assets/fonts/DancingScript.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AB6B3B71F38F43C3A6AF5F5E /* downvote.png */ = {isa = PBXFileReference; name = "downvote.png"; path = "../src/assets/icon/downvote.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		474E5B01511441FAAD7E8B9B /* favorite.png */ = {isa = PBXFileReference; name = "favorite.png"; path = "../src/assets/icon/favorite.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0618F771EDDB4992B6B990E5 /* share.png */ = {isa = PBXFileReference; name = "share.png"; path = "../src/assets/icon/share.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2BEF138E67F34BCDA640D0C4 /* upvote.png */ = {isa = PBXFileReference; name = "upvote.png"; path = "../src/assets/icon/upvote.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,6 @@
 				9F7C97E101A6316D80246507 /* Pods-FirstProject-FirstProjectTests.debug.xcconfig */,
 				0E9F884696C40085CAD3EBB4 /* Pods-FirstProject-FirstProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -169,7 +168,7 @@
 			sourceTree = "<group>";
 		};
 		933686DFE5B64E99A2FCC772 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				3D79A48B909F4749A9DFD959 /* DancingScript-Bold.ttf */,
 				57B807EEEDFB4879B2EA20A7 /* DancingScript-Medium.ttf */,
@@ -183,7 +182,6 @@
 			);
 			name = Resources;
 			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -237,7 +235,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -476,13 +474,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F7C97E101A6316D80246507 /* Pods-FirstProject-FirstProjectTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = FirstProjectTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,10 +502,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E9F884696C40085CAD3EBB4 /* Pods-FirstProject-FirstProjectTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = FirstProjectTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -622,7 +622,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -680,7 +680,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",

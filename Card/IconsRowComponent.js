@@ -56,6 +56,9 @@ const IconsRowComponent = props => {
     }
   };
 
+
+  
+
   return (
     <View style={styles.iconsRow}>
       <IconComponent

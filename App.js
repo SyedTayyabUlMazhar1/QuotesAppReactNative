@@ -164,9 +164,6 @@ export default App = () => {
         data={dataState}
         renderItem={({item, index}) => (
           <CardComponent
-            // setState={() => {
-            //   setDataState(Array.from(dataState));
-            // }}
             itemData={item}
             itemIndex={index}
 
