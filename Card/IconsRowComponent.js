@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { CallbackContext } from '../App';
+import React from 'react';
+import { Share, StyleSheet, Text, View } from 'react-native';
+import { useDispatch } from 'react-redux';
 import Icons from '../src/assets/icon/index';
+import { ActionTypes } from '../Store';
 import IconComponent from './IconComponent';
-
 
 const colors = {
   background: '#DF9A9A',
@@ -33,13 +33,17 @@ const styles = StyleSheet.create({
 });
 
 const IconsRowComponent = props => {
+  const dispatch = useDispatch();
+
   const {upvoted, downvoted, votes, favorited} = props.itemData;
   const {itemIndex} = props;
-  const {toggleUpvote, toggleDownvote, toggleFavorite} =
-    useContext(CallbackContext);
 
   const share = () => {
     try {
+      Share.share({
+        message: props.itemData.quotation + ' -' + props.itemData.author,
+        title: 'Share Quote',
+      });
     } catch (error) {
       alert(error.message);
     }
@@ -48,7 +52,9 @@ const IconsRowComponent = props => {
   return (
     <View style={styles.iconsRow}>
       <IconComponent
-        onPress={() => toggleUpvote(itemIndex)}
+        onPress={() =>
+          dispatch({type: ActionTypes.TOGGLE_UPVOTE, index: itemIndex})
+        }
         style={upvoted && styles.iconActive}
         source={Icons.upvote}
       />
@@ -56,13 +62,17 @@ const IconsRowComponent = props => {
       <Text style={styles.vote}>{votes}</Text>
 
       <IconComponent
-        onPress={() => toggleDownvote(itemIndex)}
+        onPress={() =>
+          dispatch({type: ActionTypes.TOGGLE_DOWNVOTE, index: itemIndex})
+        }
         style={downvoted && styles.iconActive}
         source={Icons.downvote}
       />
 
       <IconComponent
-        onPress={() => toggleFavorite(itemIndex)}
+        onPress={() =>
+          dispatch({type: ActionTypes.TOGGLE_FAVORITE, index: itemIndex})
+        }
         style={[favorited && styles.iconActive, {marginHorizontal: 16}]}
         source={Icons.favorite}
       />

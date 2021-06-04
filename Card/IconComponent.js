@@ -1,15 +1,5 @@
-import React, {Component, useState} from 'react';
-
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  FlatList,
-  SafeAreaView,
-  TouchableOpacity,
-  Share,
-} from 'react-native';
+import React, {Component} from 'react';
+import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 
 const colors = {
   background: '#DF9A9A',
@@ -19,7 +9,6 @@ const colors = {
   },
 };
 const styles = StyleSheet.create({
-
   icon: {
     width: 24,
     height: 24,
@@ -39,7 +28,5 @@ class IconComponent extends Component {
     );
   }
 }
-
-
 
 export default IconComponent;
