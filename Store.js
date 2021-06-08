@@ -4,13 +4,14 @@ export const ActionTypes = {
   TOGGLE_UPVOTE: 'TOGGLE_UPVOTE',
   TOGGLE_DOWNVOTE: 'TOGGLE_DOWNVOTE',
   TOGGLE_FAVORITE: 'TOGGLE_FAVORITE',
+  ADD_QUOTE: 'ADD_QUOTE',
 };
 
 const initialState = [
   {
     profilePic:
       'https://i.pinimg.com/474x/7d/1a/3f/7d1a3f77eee9f34782c6f88e97a6c888.jpg',
-    name: "John Doe",
+    name: 'John Doe',
     quotation:
       'The greatest glory in living lies not in never falling, but in rising every time we fall.',
     author: 'Nelson Mandela',
@@ -21,7 +22,7 @@ const initialState = [
   },
   {
     profilePic: 'https://wallpapercave.com/wp/wp5756323.jpg',
-    name: "Jane Doe",
+    name: 'Jane Doe',
     quotation: 'The way to get started is to quit talking and begin doing.',
     author: 'Walt Disney',
     favorited: false,
@@ -32,7 +33,7 @@ const initialState = [
   {
     profilePic:
       'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=32',
-    name: "Johnnathan",
+    name: 'Johnnathan',
     quotation:
       "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.",
     author: 'Steve Jobs',
@@ -44,7 +45,7 @@ const initialState = [
   {
     profilePic:
       'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=32',
-    name: "Alexa",
+    name: 'Alexa',
     quotation:
       'If life were predictable it would cease to be life, and be without flavor.',
     author: 'Eleanor Roosevelt',
@@ -56,7 +57,7 @@ const initialState = [
   {
     profilePic:
       'https://images.pexels.com/photos/220429/pexels-photo-220429.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=32',
-    name: "Emily",
+    name: 'Emily',
     quotation:
       "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
     author: 'Oprah Winfrey',
@@ -68,7 +69,7 @@ const initialState = [
   {
     profilePic:
       'https://images.pexels.com/photos/34534/people-peoples-homeless-male.jpg?auto=compress&cs=tinysrgb&dpr=1&w=32',
-    name: "Smith Von",
+    name: 'Smith Von',
     quotation:
       "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.",
     author: 'James Cameron',
@@ -80,7 +81,7 @@ const initialState = [
   {
     profilePic:
       'https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=32',
-    name: "Sergey",
+    name: 'Sergey',
     quotation: "Life is what happens when you're busy making other plans",
     author: 'John Lennon',
     favorited: true,
@@ -149,6 +150,21 @@ const reducer = (state = initialState, action) => {
       return newState;
     }
 
+    case ActionTypes.ADD_QUOTE: {
+      const newQuote = {
+        profilePic:
+          'https://i.pinimg.com/474x/7d/1a/3f/7d1a3f77eee9f34782c6f88e97a6c888.jpg',
+        name: 'John Doe',
+        quotation: action.quotation,
+        author: action.author,
+        favorited: false,
+        upvoted: false,
+        downvoted: false,
+        votes: 0,
+      };
+
+      return [...state, newQuote];
+    }
     default:
       return state;
   }
